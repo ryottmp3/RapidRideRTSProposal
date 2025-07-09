@@ -248,6 +248,56 @@ Applies visual design changes to match Rapid Transit or city branding standards.
     \end{itemize}
 \end{itemize}
 
+\subsection*{9. Route Map Integration with Trip Planning}
+
+Adds support for real-time route visualization and trip planning within the client interface. Riders can view system maps, route lines, scheduled stops, and select departure and destination points to preview optimal travel paths and service connections.
+
+\begin{itemize}
+    \item \textbf{Estimated Cost:} \$1,200–\$2,500
+    \item \textbf{Includes:}
+    \begin{itemize}
+        \item Static GTFS route file integration and display
+        \item Stop lookup and trip path planning
+        \item Scheduled departure time display for each stop
+    \end{itemize}
+    \item \textbf{Requirements:}
+    \begin{itemize}
+        \item Transit route and stop data in GTFS or similar format
+        \item Optional: map tile hosting or open map provider (e.g., OpenStreetMap)
+    \end{itemize}
+    \item \textbf{Benefits:}
+    \begin{itemize}
+        \item Allows riders to plan trips and view transfers
+        \item Makes the app useful beyond fare purchase and validation
+        \item Enhances accessibility for new or infrequent riders
+    \end{itemize}
+\end{itemize}
+
+\subsection*{10. Live-Time GPS Bus Tracking}
+
+Adds real-time GPS tracking of active buses to allow riders to see current vehicle locations, estimated arrival times, and service delays on a live map.
+
+\begin{itemize}
+    \item \textbf{Estimated Cost:} \$1,800–\$3,200
+    \item \textbf{Includes:}
+    \begin{itemize}
+        \item Live bus telemetry endpoint and storage
+        \item Frontend map integration with refreshable vehicle markers
+        \item ETA calculations based on headway and movement
+    \end{itemize}
+    \item \textbf{Requirements:}
+    \begin{itemize}
+        \item GPS tracking devices on buses (with cellular or Wi-Fi uplink)
+        \item Optional: existing AVL provider integration
+    \end{itemize}
+    \item \textbf{Benefits:}
+    \begin{itemize}
+        \item Provides greater rider confidence and system reliability
+        \item Enables dynamic service management during events or weather delays
+        \item Foundation for future features like disruption alerts or crowd estimation
+    \end{itemize}
+\end{itemize}
+
 \vspace{1em}
 \noindent All estimates are preliminary and based on a standard development rate of \$40/hour. Bundled packages, pilot programs, or grant-funded collaborations may reduce the overall cost.
 
