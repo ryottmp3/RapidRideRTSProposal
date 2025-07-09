@@ -1,0 +1,142 @@
+\documentclass[12pt]{article}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\geometry{margin=1in}
+\titleformat{\section}{\normalfont\Large\bfseries}{\thesection}{1em}{}
+
+\title{Proposal for RapidRide Ticketing System\\[0.5em] \large A Modern, Secure, and Accessible Transit Ticketing Solution}
+\author{Submitted by: H. Ryott Glayzer\\Contact: harley.glayzer@mines.sdsmt.edu}
+\date{\today}
+
+\begin{document}
+\maketitle
+\thispagestyle{empty}
+\newpage
+
+\tableofcontents
+\newpage
+
+\section{Executive Summary}
+RapidRide is a lightweight, secure, and extensible fare system for public transit. Designed for mid-sized municipalities such as Rapid City, South Dakota, it offers a cost-effective, open, and auditable alternative to commercial transit fare platforms.
+
+Using digitally signed QR code tickets and a flexible mobile-friendly interface, RapidRide empowers riders and administrators with secure, modern infrastructure—without the costs or complexity of proprietary systems.
+
+\section{Project Scope}
+\begin{itemize}
+    \item Deploy a mobile- and kiosk-friendly digital fare platform
+    \item Enable digital ticket purchase via Stripe integration
+    \item Support secure QR-code-based validation
+    \item Provide tools for fare enforcement, reporting, and expansion
+    \item Ensure accessibility for all riders, including offline and low-tech options
+\end{itemize}
+
+\section{System Overview}
+\subsection{Frontend}
+The RapidRide client is a cross-platform application written in Qt/QML using PySide6, providing:
+\begin{itemize}
+    \item A secure user wallet for ticket storage
+    \item Stripe checkout integration for ticket purchasing
+    \item QR code generation and display for scanned validation
+    \item Offline ticket caching for intermittent connectivity
+\end{itemize}
+
+\subsection{Backend}
+The backend is built in Python using FastAPI, supporting:
+\begin{itemize}
+    \item Ticket generation using ED25519 digital signatures
+    \item Ticket validation against cryptographic and database records
+    \item User login, wallet synchronization, and Stripe session handling
+\end{itemize}
+
+\section{Deployment Plan}
+\begin{enumerate}
+    \item \textbf{Phase 1: MVP (Proof of Concept)} \hfill 2–4 weeks
+    \begin{itemize}
+        \item Core ticket generation, QR validation, and Stripe checkout
+        \item Basic enforcement scanner page
+        \item Pilot on a small number of devices or routes
+    \end{itemize}
+
+    \item \textbf{Phase 2: Fleet Rollout and Admin Features} \hfill 4–6 weeks
+    \begin{itemize}
+        \item Wallet management dashboard (optional)
+        \item Driver/passenger usage analytics
+        \item Training and support for operators
+    \end{itemize}
+\end{enumerate}
+
+\section{Cost Estimate}
+\subsection*{Software Development}
+\begin{itemize}
+    \item Initial system deployment: \$3,500-\$6,000
+    \item Optional expansion (reporting, dashboards): \$1,200–\$5,000
+\end{itemize}
+
+\subsection*{Hardware Requirements}
+One MiniPC running Debian Stable is recommended for backend infrastructure. Hardware costs for such a PC range from
+\$200-\$500.
+The frontend client can run on existing Android tablets, iPhones, or Linux laptops with cameras for validation.
+
+
+\section{Ongoing Support and Additional Development}
+
+After deployment of the core RapidRide system, ongoing support and additional development are available at the following rates:
+
+\subsection*{Ongoing Support}
+\begin{itemize}
+    \item \textbf{Standard Support (Monthly)} \hfill \$400/month
+    \begin{itemize}
+        \item Covers small bug fixes, basic questions, user support, and monthly maintenance updates
+        \item Includes up to 4 hours/month of development time
+    \end{itemize}
+    \item \textbf{On-Demand Support (Hourly)} \hfill \$40/hour
+    \begin{itemize}
+        \item For updates, troubleshooting, or deployment help beyond the base agreement
+    \end{itemize}
+\end{itemize}
+
+\subsection*{Additional Development}
+New features, expansions, or tooling requests are billed at:
+
+\begin{itemize}
+    \item \textbf{\$40/hour for planned development}
+    \item Flat-rate feature pricing available upon request
+\end{itemize}
+
+All code remains GPL-licensed and open to the City of Rapid City, with no proprietary restrictions.
+
+\section{License and Code Ownership}
+
+The RapidRide ticketing system is developed and maintained by the author and is provided under the terms of the \textbf{GNU General Public License v3 (GPL-3.0)}.
+
+This ensures:
+\begin{itemize}
+    \item The source code remains free and open to the public
+    \item Modifications and derivative works must also be licensed under GPL
+    \item The City of Rapid City is granted full rights to use, deploy, and modify the system
+    \item The developer retains ownership of the original codebase and its licensing terms
+\end{itemize}
+
+This licensing model ensures long-term transparency, prevents vendor lock-in, and aligns with the values of public digital infrastructure.
+
+For reference, the full license text is available at: \url{https://www.gnu.org/licenses/gpl-3.0.html}
+
+
+
+\section{Conclusion}
+RapidRide provides a high-trust, low-friction fare system without vendor lock-in or heavy infrastructure costs. With a pilot-ready QR-based deployment and a path for secure digital operations, it is a strong foundation for the modernization of Rapid City public transit.
+
+\appendix
+\section{Appendix: References}
+\begin{itemize}
+    \item ED25519 Cryptographic Signatures: \url{https://ed25519.cr.yp.to/}
+    \item Qt + PySide6 Documentation: \url{https://doc.qt.io/qtforpython/}
+    \item Stripe Payments: \url{https://stripe.com/docs}
+    \item FastAPI Web Framework: \url{https://fastapi.tiangolo.com}
+\end{itemize}
+
+\end{document}
+
