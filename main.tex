@@ -113,63 +113,172 @@ All code remains GPL-licensed and open to the City of Rapid City, with no propri
 The RapidRide system is designed to be modular and extensible. The following features can be added after the initial deployment as the needs of the transit system evolve. Each item includes a preliminary cost estimate based on hourly development and integration effort.
 
 \subsection*{1. Admin Dashboard and Reporting}
-A secure web interface for transit administrators to view usage statistics, download ticket data, and manage users or routes.
+
+A secure, web-based interface for transit administrators to monitor system usage, download records, and manage operational data.
+
 \begin{itemize}
-    \item Estimated Cost: \$1,200–\$2,500
-    \item Features: Ticket sales analytics, per-route breakdowns, user activity logs
+    \item \textbf{Estimated Cost:} \$1,200–\$2,500
+    \item \textbf{Includes:}
+    \begin{itemize}
+        \item Ticket sales and usage analytics
+        \item Rider activity summaries and filtering by route
+        \item CSV export and dashboard visualizations
+    \end{itemize}
+    \item \textbf{Benefits:}
+    \begin{itemize}
+        \item Improves data transparency and decision-making
+        \item Reduces staff time spent on manual record queries
+    \end{itemize}
 \end{itemize}
 
 \subsection*{2. Offline Ticket Validation Mode}
-Support for offline validation devices (e.g., fare inspector tablets) with a locally cached list of valid ticket IDs and signatures.
+
+Support for ticket validation on devices that operate without consistent internet access, such as rural-route buses or mobile fare inspectors.
+
 \begin{itemize}
-    \item Estimated Cost: \$800–\$1,500
-    \item Benefits: Ensures validation works without network coverage
+    \item \textbf{Estimated Cost:} \$800–\$1,500
+    \item \textbf{Includes:}
+    \begin{itemize}
+        \item Local cache of ticket ID and status
+        \item Secure fallback validation logic
+        \item Sync mechanism for online catch-up
+    \end{itemize}
+    \item \textbf{Benefits:}
+    \begin{itemize}
+        \item Ensures continuity of fare enforcement in remote or offline areas
+        \item Enables validation on the move without real-time network dependency
+    \end{itemize}
 \end{itemize}
 
-\subsection*{3. Multi-Ride and Time-Limited Tickets}
-Support for configurable ticket types such as 10-punch passes, 24-hour unlimited ride passes, or monthly passes with expiration logic.
+\subsection*{3. Kiosk Mode for Public Purchase Stations}
+
+A locked-down, touchscreen-compatible interface for riders to purchase tickets at transit centers or high-traffic stops.
+
 \begin{itemize}
-    \item Estimated Cost: \$1,000–\$2,000
-    \item Includes: Additional ticket issuance rules and validation logic
+    \item \textbf{Estimated Cost:} \$1,000–\$1,800
+    \item \textbf{Includes:}
+    \begin{itemize}
+        \item Touch-optimized UI layout
+        \item Persistent login for kiosk identity
+        \item Stripe-hosted checkout flow integration
+    \end{itemize}
+    \item \textbf{Requirements:}
+    \begin{itemize}
+        \item Commercial tablet or touch screen
+        \item Optional: printer integration or SMS ticket delivery
+    \end{itemize}
+    \item \textbf{Benefits:}
+    \begin{itemize}
+        \item Expands ticket access to unbanked and non-smartphone users
+        \item Reduces lines at customer service counters
+    \end{itemize}
 \end{itemize}
 
-\subsection*{4. Kiosk Mode for Public Purchase Stations}
-Deployable kiosk version of the client UI for ticket sales at transit centers or bus stops using touchscreens or tablets.
+\subsection*{4. Physical QR/NFC Card Support (Tap or Scan)}
+
+This upgrade allows riders to use physical fare cards embedded with a QR code or contactless NFC chip. Cards can be distributed to riders without smartphones, used for pass programs, or issued for rapid boarding on high-volume routes.
+
 \begin{itemize}
-    \item Estimated Cost: \$1,000–\$1,800
-    \item Requirements: Touch-optimized UI, persistent kiosk login, printer integration (optional)
+    \item \textbf{Estimated Cost:} \$1,800–\$3,500
+    \item \textbf{Includes:}
+    \begin{itemize}
+        \item Backend logic to register and validate card IDs
+        \item Card issuing interface (admin or API)
+        \item QR-encoded card UID integration
+        \item Optional: MIFARE DESFire NFC support
+    \end{itemize}
+    \item \textbf{Requirements:}
+    \begin{itemize}
+        \item Physical card printing (typically \$1–2 per card in bulk)
+        \item USB or serial NFC readers (if tap-to-ride is enabled)
+        \item Fare inspector or vehicle-mounted reader device
+    \end{itemize}
+    \item \textbf{Benefits:}
+    \begin{itemize}
+        \item Enables support for riders without mobile phones
+        \item Faster boarding on fixed-route buses
+        \item Durable, reusable fare media for passholders or youth programs
+    \end{itemize}
 \end{itemize}
 
 \subsection*{5. Multi-Language Support}
-Add Lakota, Spanish, or other regional language translations to the user interface.
+
+Adds language toggle functionality to the user interface, enabling the display of all content in English, Lakota, Spanish, or other languages as needed.
+
 \begin{itemize}
-    \item Estimated Cost: \$600–\$1,200
-    \item Language toggle and UI translation tables
+    \item \textbf{Estimated Cost:} \$600–\$1,200
+    \item \textbf{Includes:}
+    \begin{itemize}
+        \item UI translation tables
+        \item Dynamic language toggle
+        \item Lakota and Spanish translation integration (where available)
+    \end{itemize}
+    \item \textbf{Benefits:}
+    \begin{itemize}
+        \item Increases accessibility for non-English speakers
+        \item Improves compliance with local and federal equity standards
+    \end{itemize}
 \end{itemize}
 
 \subsection*{6. Inspector/Admin Tablet Mode}
-Special login mode with access to ticket scanning tools, on-board metrics, and summary data for fare inspectors or drivers.
+
+Adds an inspection tool for fare enforcement personnel, with access to ticket validation tools, limited analytics, and offline fallback capability.
+
 \begin{itemize}
-    \item Estimated Cost: \$800–\$1,500
-    \item Device provisioning and PIN-based access
+    \item \textbf{Estimated Cost:} \$800–\$1,500
+    \item \textbf{Includes:}
+    \begin{itemize}
+        \item Device-friendly layout for tablets
+        \item PIN-protected admin login mode
+        \item Real-time and offline ticket validation tools
+    \end{itemize}
+    \item \textbf{Benefits:}
+    \begin{itemize}
+        \item Streamlines fare enforcement on board buses
+        \item Reduces dependence on paper records or verbal verification
+    \end{itemize}
 \end{itemize}
 
 \subsection*{7. Ticket Sharing or Gifting}
-Support for users to transfer a valid ticket to another rider via QR scan or link.
+
+Enables riders to transfer tickets to another user or device, either permanently (gift) or for limited use (sharing window).
+
 \begin{itemize}
-    \item Estimated Cost: \$700–\$1,200
-    \item Requires: Ticket re-issuance and ownership swap logic
+    \item \textbf{Estimated Cost:} \$700–\$1,200
+    \item \textbf{Includes:}
+    \begin{itemize}
+        \item Ticket ownership transfer logic
+        \item QR-scan or link-based acceptance flow
+        \item Audit trail and one-time-use token control
+    \end{itemize}
+    \item \textbf{Benefits:}
+    \begin{itemize}
+        \item Enables gifting to friends or dependents
+        \item Useful for youth programs, visitor passes, and parental sharing
+    \end{itemize}
 \end{itemize}
 
 \subsection*{8. Custom Branding and Theming}
-Visual design upgrades to reflect the branding of Rapid Transit or other agencies.
+
+Applies visual design changes to match Rapid Transit or city branding standards.
+
 \begin{itemize}
-    \item Estimated Cost: \$400–\$900
-    \item Includes color schemes, logos, and landing screens
+    \item \textbf{Estimated Cost:} \$400–\$900
+    \item \textbf{Includes:}
+    \begin{itemize}
+        \item Custom color schemes and typefaces
+        \item Logo and graphic integration
+        \item Branded ticket UI and welcome screens
+    \end{itemize}
+    \item \textbf{Benefits:}
+    \begin{itemize}
+        \item Aligns visual identity with public-facing communications
+        \item Creates a more professional and polished rider experience
+    \end{itemize}
 \end{itemize}
 
 \vspace{1em}
-\noindent All estimates are preliminary and based on a rate of \$40/hour. Bundled development packages or feature prioritization may reduce overall cost.
+\noindent All estimates are preliminary and based on a standard development rate of \$40/hour. Bundled packages, pilot programs, or grant-funded collaborations may reduce the overall cost.
 
 
 \section{License and Code Ownership}
