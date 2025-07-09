@@ -6,6 +6,7 @@
 \contentsline {section}{\numberline {4}Deployment Plan}{4}{section.4}%
 \contentsline {section}{\numberline {5}Cost Estimate}{4}{section.5}%
 \contentsline {section}{\numberline {6}Ongoing Support and Additional Development}{4}{section.6}%
-\contentsline {section}{\numberline {7}License and Code Ownership}{5}{section.7}%
-\contentsline {section}{\numberline {8}Conclusion}{5}{section.8}%
-\contentsline {section}{\numberline {A}Appendix: References}{5}{appendix.A}%
+\contentsline {section}{\numberline {7}Future Add-Ons and Expansion Opportunities}{5}{section.7}%
+\contentsline {section}{\numberline {8}License and Code Ownership}{7}{section.8}%
+\contentsline {section}{\numberline {9}Conclusion}{7}{section.9}%
+\contentsline {section}{\numberline {A}Appendix: References}{7}{appendix.A}%
